@@ -1,0 +1,526 @@
+/*!
+ * # Semantic UI 2.0.7 - Modal
+ * http://github.com/semantic-org/semantic-ui/
+ *
+ *
+ * Copyright 2015 Contributors
+ * Released under the MIT license
+ * http://opensource.org/licenses/MIT
+ *
+ */
+
+
+/*******************************
+             Modal
+*******************************/
+
+.ui.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    top: 50%;
+    left: 50%;
+    text-align: center;
+    background: #ffffff;
+    border: none;
+    box-shadow: 1px 3px 3px 0px rgba(0, 0, 0, 0.2), 1px 3px 15px 2px rgba(0, 0, 0, 0.2);
+    -webkit-transform-origin: 50% 25%;
+    -ms-transform-origin: 50% 25%;
+    transform-origin: 50% 25%;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+    will-change: top, left, margin, transform, opacity;
+}
+
+
+
+/*******************************
+            Content
+*******************************/
+
+
+/*--------------
+     Close
+---------------*/
+
+.ui.modal > .close {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 1;
+    font-size: 1.25em;
+    color: #ffffff;
+    width: 30px;
+    height: 30px;
+    background: #F7495C;
+    padding: 0.625rem 0rem 0rem 0rem;
+    transition: 0.2s ease-in-out;
+    -webkit-transition: 0.2s ease-in-out;
+    -moz-transition: 0.2s ease-in-out;
+}
+.ui.modal > .close:after{
+    content: '';
+    width: 10px;
+    height: 10px;
+    display: block;
+    background: url(../images/cross.png) 0 0 no-repeat;
+    position: absolute;
+    top:50%;
+    left:50%;
+    margin-top: -5px;
+    margin-left: -5px;
+}
+.ui.modal > .close:hover {
+    background: #F7495C;
+}
+
+/*--------------
+     Header
+---------------*/
+
+.ui.modal > .header {
+    display: block;
+    background: #fff;
+    margin: 0em;
+    padding: 35px 45px;
+    box-shadow: none;
+    color: #232836;
+    border-bottom: 1px solid #f4f4f4;
+    font-weight: 400;
+}
+.ui.modal > .header:not(.ui) {
+    font-size: 24px;
+    line-height: 1.2857em;
+}
+.ui.modal > .header .bot-gold{margin-top: 1px;}
+.income-line{border-bottom: 1px solid #f4f4f4;}
+.income-line .col-6{padding: 28px 15px 28px 45px;font-size: 16px;}
+.income-line .col-6 span{margin-left: 15px;}
+.income-line .col-6 span.green{color:#27c97b;}
+.income-line .col-6 span.grey{color:#6b707c;}
+.income-line .col-6:first-child{border-right: 1px solid #f4f4f4;}
+.deposite-wrap{padding:20px 45px 45px;border-top: 1px solid #f4f4f4;}
+.min_deposite{font-size: 16px;color:#232836;margin-bottom: 30px;}
+.min_deposite span{font-size: 24px;color:#27c97b;}
+
+/*--------------
+     Content
+---------------*/
+
+.ui.modal > .content {
+    display: block;
+    width: 100%;
+    line-height: 1.6;
+    padding: 30px 45px;
+    background:#fff;
+    font-size: 14px;
+    color:#6c7380;
+    text-align: left;
+}
+.ui.modal > .content h4{color:#232836;font-size: 16px;}
+.ui.modal > .image.content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+/* Image */
+.ui.modal > .content > .image {
+    display: block;
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    width: '';
+    -webkit-align-self: top;
+    -ms-flex-item-align: top;
+    align-self: top;
+}
+.ui.modal > [class*="top aligned"] {
+    -webkit-align-self: top;
+    -ms-flex-item-align: top;
+    align-self: top;
+}
+.ui.modal > [class*="middle aligned"] {
+    -webkit-align-self: middle;
+    -ms-flex-item-align: middle;
+    align-self: middle;
+}
+.ui.modal > [class*="stretched"] {
+    -webkit-align-self: stretch;
+    -ms-flex-item-align: stretch;
+    align-self: stretch;
+}
+
+/* Description */
+.ui.modal > .content > .description {
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 auto;
+    -ms-flex: 1 0 auto;
+    flex: 1 0 auto;
+    min-width: 0px;
+    -webkit-align-self: top;
+    -ms-flex-item-align: top;
+    align-self: top;
+}
+.ui.modal > .content > .icon + .description,
+.ui.modal > .content > .image + .description {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    min-width: '';
+    width: auto;
+    padding-left: 2em;
+}
+/*rtl:ignore*/
+.ui.modal > .content > .image > i.icon {
+    margin: 0em;
+    opacity: 1;
+    width: auto;
+    line-height: 1;
+    font-size: 8rem;
+}
+
+.ui.modal .line+.line{
+    margin-top: 20px;
+}
+/*--------------
+     Actions
+---------------*/
+
+.ui.modal > .actions {
+    background: #f9fafb;
+    padding: 30px;
+    text-align: center;
+}
+.ui.modal .actions > .button+.button  {
+    margin-left: 0.75em;
+}
+
+/*-------------------
+       Responsive
+--------------------*/
+
+
+/* Modal Width */
+@media only screen and (max-width: 767px) {
+    .ui.modal {
+        width: 95%;
+        margin: 0em 0em 0em -47.5%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .ui.modal {
+        width: 88%;
+        margin: 0em 0em 0em -44%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .ui.modal {
+        width: 850px;
+        margin: 0em 0em 0em -425px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .ui.modal {
+        width: 900px;
+        margin: 0em 0em 0em -450px;
+    }
+}
+@media only screen and (min-width: 1920px) {
+    .ui.modal {
+        width: 950px;
+        margin: 0em 0em 0em -475px;
+    }
+}
+
+/* Tablet and Mobile */
+@media only screen and (max-width: 992px) {
+    .ui.modal > .header {
+        padding-right: 2.25rem;
+    }
+    .ui.modal > .close {
+        top: 0;
+        right: 0;
+        color: rgba(0, 0, 0, 0.87);
+        width: 30px;
+        height: 30px;
+    }
+}
+
+/* Mobile */
+@media only screen and (max-width: 767px) {
+    .ui.modal > .content {
+        display: block;
+    }
+    .ui.modal > .close {
+        top: 0 !important;
+        right: 0 !important;
+    }
+    /*rtl:ignore*/
+    .ui.modal .image.content {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
+    }
+    .ui.modal .content > .image {
+        display: block;
+        max-width: 100%;
+        margin: 0em auto !important;
+        text-align: center;
+        padding: 0rem 0rem 1rem !important;
+    }
+    .ui.modal > .content > .image > i.icon {
+        font-size: 5rem;
+        text-align: center;
+    }
+    /*rtl:ignore*/
+    .ui.modal .content > .description {
+        display: block;
+        width: 100% !important;
+        margin: 0em !important;
+        padding: 1rem 0rem !important;
+        box-shadow: none;
+    }
+
+}
+
+/*--------------
+    Coupling
+---------------*/
+
+.ui.inverted.dimmer > .ui.modal {
+    box-shadow: 1px 3px 10px 2px rgba(0, 0, 0, 0.2);
+}
+
+
+/*******************************
+             Types
+*******************************/
+
+.ui.basic.modal {
+    background-color: transparent;
+    border: none;
+    border-radius: 0em;
+    box-shadow: none !important;
+    color: #ffffff;
+}
+.ui.basic.modal > .header,
+.ui.basic.modal > .content,
+.ui.basic.modal > .actions {
+    background-color: transparent;
+}
+.ui.basic.modal > .header {
+    color: #ffffff;
+}
+.ui.basic.modal > .close {
+    top: 1rem;
+    right: 1.5rem;
+}
+.ui.inverted.dimmer > .basic.modal {
+    color: rgba(0, 0, 0, 0.87);
+}
+.ui.inverted.dimmer > .ui.basic.modal > .header {
+    color: rgba(0, 0, 0, 0.85);
+}
+
+/* Tablet and Mobile */
+@media only screen and (max-width: 992px) {
+    .ui.basic.modal > .close {
+        color: #ffffff;
+    }
+}
+
+
+/*******************************
+             States
+*******************************/
+
+.ui.active.modal {
+    display: block;
+}
+
+
+/*******************************
+           Variations
+*******************************/
+
+
+/*--------------
+    Scrolling
+---------------*/
+
+
+/* A modal that cannot fit on the page */
+.scrolling.dimmable.dimmed {
+    overflow: hidden;
+}
+.scrolling.dimmable.dimmed > .dimmer {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.scrolling.dimmable > .dimmer {
+    position: fixed;
+}
+.modals.dimmer .ui.scrolling.modal {
+    position: static !important;
+    margin: 3.5rem auto !important;
+}
+
+/* undetached scrolling */
+.scrolling.undetached.dimmable.dimmed {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.scrolling.undetached.dimmable.dimmed > .dimmer {
+    overflow: hidden;
+}
+.scrolling.undetached.dimmable .ui.scrolling.modal {
+    position: absolute;
+    left: 50%;
+    margin-top: 3.5rem !important;
+}
+
+/* Coupling with Sidebar */
+.undetached.dimmable.dimmed > .pusher {
+    z-index: auto;
+}
+@media only screen and (max-width: 992px) {
+    .modals.dimmer .ui.scrolling.modal {
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+    }
+}
+
+/*--------------
+   Full Screen
+---------------*/
+
+.ui.fullscreen.modal {
+    width: 95% !important;
+    left: 2.5% !important;
+    margin: 1em auto;
+}
+.ui.fullscreen.scrolling.modal {
+    left: 0em !important;
+}
+.ui.fullscreen.modal > .header {
+    padding-right: 2.25rem;
+}
+.ui.fullscreen.modal > .close {
+    top: 1.0535rem;
+    right: 1rem;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+/*--------------
+      Size
+---------------*/
+
+.ui.modal {
+    font-size: 1rem;
+}
+
+/* Small */
+.ui.small.modal > .header:not(.ui) {
+    font-size: 1.3em;
+}
+
+/* Small Modal Width */
+@media only screen and (max-width: 767px) {
+    .ui.small.modal {
+        width: 95%;
+        margin: 0em 0em 0em -47.5%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .ui.small.modal {
+        width: 70.4%;
+        margin: 0em 0em 0em -35.2%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .ui.small.modal {
+        width: 500px;
+        margin: 0em 0em 0em -250px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .ui.small.modal {
+        width: 500px;
+        margin: 0em 0em 0em -250px;
+    }
+}
+@media only screen and (min-width: 1920px) {
+    .ui.small.modal {
+        width: 500px;
+        margin: 0em 0em 0em -250px;
+    }
+}
+
+/* Large Modal Width */
+.ui.large.modal > .header {
+    font-size: 1.6em;
+}
+@media only screen and (max-width: 767px) {
+    .ui.large.modal {
+        width: 95%;
+        margin: 0em 0em 0em -47.5%;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .ui.large.modal {
+        width: 88%;
+        margin: 0em 0em 0em -44%;
+    }
+}
+@media only screen and (min-width: 992px) {
+    .ui.large.modal {
+        width: 1020px;
+        margin: 0em 0em 0em -510px;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .ui.large.modal {
+        width: 1080px;
+        margin: 0em 0em 0em -540px;
+    }
+}
+@media only screen and (min-width: 1920px) {
+    .ui.large.modal {
+        width: 1140px;
+        margin: 0em 0em 0em -570px;
+    }
+}
+
+@media (max-width: 699px){
+    .income-line .col-6:first-child {border-bottom: 1px solid #f4f4f4;border-left:none;}
+    .income-line .col-6 {padding: 20px;}
+    .ui.modal > .content{padding: 20px;}
+    .ui.modal > .header{padding:30px 20px;}
+    .deposite-wrap{padding: 20px;}
+    .min_deposite span{display: block;margin-top: 5px;}
+}
+/*******************************
+         Theme Overrides
+*******************************/
+
+
+
+/*******************************
+         Site Overrides
+*******************************/
+

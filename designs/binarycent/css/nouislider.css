@@ -1,0 +1,11 @@
+
+.noUi-background {
+	background: #32b460;
+	-webkit-transition: background 450ms;
+	transition: background 450ms;
+}
+.noUi-connect {
+	background: #e95146;
+	-webkit-transition: background 450ms;
+	transition: background 450ms;
+}
